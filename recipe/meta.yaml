@@ -1,5 +1,5 @@
 {% set name = "django-prose" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/django_prose/django_prose-{{ version }}.tar.gz
-  sha256: ee287edaf011dd27b967f9e7c304557c0de907d5902ec942a2e30bf32ad50712
+  sha256: 000c554496c2f61358c2602e21b54677bb02a727662ec9783dba5e35acfe4af8
 
 build:
   noarch: python
