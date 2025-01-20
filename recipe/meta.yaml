@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/django_prose/django_prose-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/django_prose/django_prose-{{ version }}.tar.gz
   sha256: 000c554496c2f61358c2602e21b54677bb02a727662ec9783dba5e35acfe4af8
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
     - poetry >=0.12
-    - python >=3.8,<4.0
+    - python {{ python_min }}
   run:
     - bleach >=4.0
     - django >=3.2
-    - python >=3.8,<4.0
+    - python >={{ python_min }},<4.0
 
 test:
   imports:
@@ -30,6 +30,7 @@ test:
     - prose.migrations
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
